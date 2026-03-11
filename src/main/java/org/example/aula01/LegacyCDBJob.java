@@ -1,4 +1,4 @@
-package org.example;
+package org.example.aula01;
 
 import java.math.BigDecimal;
 import java.util.Date;

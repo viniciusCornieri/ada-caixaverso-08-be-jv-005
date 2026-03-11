@@ -1,7 +1,6 @@
-package org.example;
+package org.example.aula01;
 
 import java.math.BigDecimal;
-import java.util.Calendar;
 import java.util.Date;
 
 public class LegacyCDB {
@@ -38,10 +37,10 @@ public class LegacyCDB {
 
     public Date getDataVencimento() {
         Date dataDeVencimento = dataDeCriacao;
-        int prazoEmHoras = prazoEmDias * 24;
-        int prazoEmMinutos = prazoEmHoras * 60;
-        int prazoEmSegundos = prazoEmMinutos * 60;
-        int prazoEmMillisegundos = prazoEmSegundos * 1000;
+        long prazoEmHoras = prazoEmDias * 24L;
+        long prazoEmMinutos = prazoEmHoras * 60L;
+        long prazoEmSegundos = prazoEmMinutos * 60L;
+        long prazoEmMillisegundos = prazoEmSegundos * 1000L;
         dataDeVencimento.setTime(dataDeCriacao.getTime() + prazoEmMillisegundos);
         System.out.println("DataVencimento: " + dataDeVencimento);
         return dataDeVencimento;
