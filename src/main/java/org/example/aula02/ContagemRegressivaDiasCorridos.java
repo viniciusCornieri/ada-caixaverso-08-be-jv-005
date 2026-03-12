@@ -19,7 +19,7 @@ import java.util.Scanner;
  */
 public class ContagemRegressivaDiasCorridos {
 
-    static void main() {
+    public static void main(String[] args) {
         Scanner leitor = new Scanner(System.in);
         System.out.println("Qual a data destino no formato (dd/MM/yyyy):");
         var dataInformada = leitor.nextLine();

@@ -6,7 +6,7 @@ import java.util.List;
 
 public class LegacyCDBJob {
 
-    void main() {
+    public static void main(String[] args) {
         LegacyCDB cdb1 = new LegacyCDB("CDB 1", new Date(), BigDecimal.ONE, 30);
         LegacyCDB cdb2 = new LegacyCDB("CDB 2", new Date(), BigDecimal.ONE, 15);
         LegacyCDB cdb3 = new LegacyCDB("CDB 3", new Date(), BigDecimal.TEN, 45);

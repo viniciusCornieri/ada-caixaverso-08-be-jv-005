@@ -4,7 +4,7 @@ import java.time.*;
 
 public class TechKidsOpeningValidator {
 
-    static void main() throws InterruptedException {
+    public static void main(String[] args) throws InterruptedException {
         var validator = new TechKidsOpeningValidator();
         var dataDeNascimento = LocalDate.of(2008, Month.DECEMBER, 15);
         boolean podeCriarConta = validator.menorDe18anos(dataDeNascimento, LocalDate.now());

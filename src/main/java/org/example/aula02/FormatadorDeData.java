@@ -10,7 +10,7 @@ import java.time.format.DateTimeFormatter;
  */
 public class FormatadorDeData {
 
-    public static void main() {
+    public static void main(String[] args) {
 
         LocalDate data = LocalDate.of(2026, 03, 15);
         System.out.println(data);

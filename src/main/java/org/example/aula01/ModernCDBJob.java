@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ModernCDBJob {
 
-    void main() {
+    public static void main(String[] args) {
         ModernCDB cdb1 = new ModernCDB("CDB 1", LocalDate.now(), BigDecimal.ONE, 30);
         ModernCDB cdb2 = new ModernCDB("CDB 2", LocalDate.now(), BigDecimal.ONE, 15);
         ModernCDB cdb3 = new ModernCDB("CDB 3", LocalDate.now(), BigDecimal.TEN, 45);
