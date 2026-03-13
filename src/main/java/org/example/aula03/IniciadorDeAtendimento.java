@@ -3,6 +3,7 @@ package org.example.aula03;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
+import java.util.UUID;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
@@ -27,31 +28,28 @@ public class IniciadorDeAtendimento {
     public static void main(String[] args) {
         IniciadorDeAtendimento iniciadorDeAtendimento = new IniciadorDeAtendimento();
 
-//        Supplier<String> protocoloSupplier = () -> {
-//            LocalDateTime now = LocalDateTime.now();
-//            //10/03/2026 às 20:00:10 - 20260310200010
-//            DateTimeFormatter formatador = DateTimeFormatter.ofPattern("yyyyMMddHHmmss");
-//            String dataFormatada = now.format(formatador);
-//            Random randomizador = new Random();
-//            int numeroAleatorio = randomizador.nextInt(0, 10000);
-////            String protocolo = String.format("PROT-%s-%d", dataFormatada, numeroAleatorio);
-//            return "PROT-%s-%04d".formatted(dataFormatada, numeroAleatorio);
-//        };
-
         Supplier<String> protocoloSupplier = GeradorDeProtocoloDiario::gerar;
-//        Consumer<String> impressor = (entrada) -> System.out.println(entrada);
-        Consumer<String> impressor = System.out::println;
 
-        iniciadorDeAtendimento.atender(System.out::println, protocoloSupplier);
-        iniciadorDeAtendimento.atender(System.out::println, protocoloSupplier);
-        iniciadorDeAtendimento.atender(System.out::println, protocoloSupplier);
-        iniciadorDeAtendimento.atender(impressor, GeradorDeProtocoloDiario::gerar);
-        iniciadorDeAtendimento.atender(impressor, GeradorDeProtocoloDiario::gerar);
-        iniciadorDeAtendimento.atender(impressor, GeradorDeProtocoloDiario::gerar);
+        iniciadorDeAtendimento.atender(protocoloSupplier);
+        iniciadorDeAtendimento.atender(protocoloSupplier);
+        iniciadorDeAtendimento.atender(() -> GeradorDeProtocoloDiario.gerar());
+        iniciadorDeAtendimento.atender(GeradorDeProtocoloDiario::gerar);
+        iniciadorDeAtendimento.atender(GeradorDeProtocoloDiario::gerar);
+
+        GeradorDeProtocoloUUID geradorUUID = new GeradorDeProtocoloUUID();
+        iniciadorDeAtendimento.atender(geradorUUID::gerar);
+        iniciadorDeAtendimento.atender(geradorUUID::gerar);
+        iniciadorDeAtendimento.atender(geradorUUID::gerar);
+        iniciadorDeAtendimento.atender(geradorUUID::gerar);
+        iniciadorDeAtendimento.atender(() -> UUID.randomUUID().toString());
+        iniciadorDeAtendimento.atender(UUID.randomUUID()::toString);
+        iniciadorDeAtendimento.atender(UUID.randomUUID()::toString);
+        iniciadorDeAtendimento.atender(UUID.randomUUID()::toString);
+        iniciadorDeAtendimento.atender(UUID.randomUUID()::toString);
     }
 
-    public void atender(Consumer<String> impressor, Supplier<String> geradorDeProtocolo) {
+    public void atender(Supplier<String> geradorDeProtocolo) {
         String protocolo = geradorDeProtocolo.get();
-        impressor.accept("Iniciando atendimento com o protocolo " + protocolo);
+        System.out.println("Iniciando atendimento com o protocolo " + protocolo);
     }
 }
