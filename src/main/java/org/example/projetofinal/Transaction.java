@@ -4,6 +4,7 @@ import lombok.Builder;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 @Builder
 public record Transaction(String transactionId,
@@ -16,6 +17,8 @@ public record Transaction(String transactionId,
                           int loginAttempts,
                           BigDecimal balance) {
 
+    public static final DateTimeFormatter FORMATTER = DateTimeFormatter.ofPattern("...");
+
     public static Transaction fromCSV(String row) {
         String[] campos = row.split(",");
 
@@ -23,7 +26,7 @@ public record Transaction(String transactionId,
                 .transactionId(campos[0])
                 .accountId(campos[1])
                 .amount(new BigDecimal(campos[2]))
-//                .timestamp(LocalDateTime.parse(campos[3], DateTimeFormatter.ofPattern("...")))
+//                .timestamp(LocalDateTime.parse(campos[3], FORMATTER))
                 .timestamp(LocalDateTime.now())
                 .type(TransactionType.valueOf(campos[4]))
                 .channel(Channel.valueOf(campos[9]))
