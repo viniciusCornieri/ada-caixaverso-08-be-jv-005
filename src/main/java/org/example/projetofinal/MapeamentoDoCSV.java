@@ -27,6 +27,7 @@ public class MapeamentoDoCSV {
                 .loginAttempts(1)
                 .balance(BigDecimal.TWO)
                 .build();
+
     }
 
 

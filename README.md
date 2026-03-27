@@ -8,6 +8,7 @@ Acompanhamento das aulas de Técnicas de Programação I
 * aula 4 - [BE-JV-005_Aula_04_Streams.pdf](BE-JV-005_Aula_04_Streams.pdf)
 * aula 5 - [BE-JV-005_Aula_05_advanced_streams_slides.pdf](BE-JV-005_Aula_05_advanced_streams_slides.pdf)
 * aula 6 - [BE-JV-005_Aula_06_programacao_paralela_slides.pdf](BE-JV-005_Aula_06_programacao_paralela_slides.pdf)
+* aula 7 - [BE-JV-005_Aula_07_programacao_assincrona_slides.pdf](BE-JV-005_Aula_07_programacao_assincrona_slides.pdf)
 ## Projeto Final
 
 [final-project.md](final-project.md)
